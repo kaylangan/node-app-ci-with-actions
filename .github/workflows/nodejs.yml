@@ -4,14 +4,17 @@ on:
   pull_request:
     branches:
     - master
+  push:
+    branches:
+    - soon-to-be-born
 
 jobs:
-  strategy:
-    matrix:
-      os: [windows-latest, ubuntu-latest, mac-ATTACK]
 
   build:
-
+  
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, mac-ATTACK]
     runs-on: ${{ matrix.os }}
 
     steps:
