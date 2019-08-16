@@ -11,7 +11,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: NOT-AN-IMAGE
 
     steps:
     - uses: actions/checkout@master
