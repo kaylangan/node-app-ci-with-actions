@@ -16,7 +16,6 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macOS-latest]
-        run-linter: [true, false, false]
 
     steps:
     - uses: actions/checkout@master
@@ -31,4 +30,4 @@ jobs:
         npm test
     - name: Linter for Ubuntu only
       run: echo 'linter!'
-      if: ${{ matrix.run-linter }}
+      if: matrix.os == 'ubuntu-latest'
