@@ -28,6 +28,6 @@ jobs:
         npm install
         npm run build --if-present
         npm test
-    - name: Only for Windows
-      run: echo 'hello'
-      if: ${{ matrix.os }} == 'windows-latest'
+    - name: Only for PRs
+      run: echo 'Thank you!'
+      if: github.event == 'pull_request'
