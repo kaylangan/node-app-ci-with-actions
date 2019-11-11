@@ -43,7 +43,7 @@ jobs:
         npm test
 
     - name: Linter for Ubuntu only
-      run: echo 'run linter'
+      run: npm run lint
       if: matrix.os == 'ubuntu-latest'
 
 
