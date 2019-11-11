@@ -29,5 +29,5 @@ jobs:
         npm run build --if-present
         npm test
     - name: Linter for Ubuntu only
-      run: npm lint
+      run: echo 'run linter'
       if: matrix.os == 'ubuntu-latest'
