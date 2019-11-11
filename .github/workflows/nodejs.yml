@@ -7,11 +7,15 @@ on:
   push:
     branches:
     - master
+    - release/*
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.ps }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
     - uses: actions/checkout@master
@@ -24,3 +28,6 @@ jobs:
         npm install
         npm run build --if-present
         npm test
+    - name: Only for Windows
+      run: echo 'hello'
+      if: ${{ matrix.os }} == 'windows-latest'
